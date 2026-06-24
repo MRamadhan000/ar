@@ -1,7 +1,8 @@
 // app/page.tsx
+"use client";  // ← WAJIB agar dynamic + ssr:false bisa dipakai
+
 import dynamic from "next/dynamic";
 
-// Semua logic AR/3D di-load client-only → fix SSR error Vercel
 const ARScene = dynamic(() => import("./ar-scene"), {
   ssr: false,
   loading: () => (
